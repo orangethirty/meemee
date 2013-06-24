@@ -21,5 +21,5 @@ class Store(models.Model):
     ficticious_name = models.CharField(max_length=20) #Mr. Blue ?!
     email = models.EmailField() #email acct. used for posting
     
-    def __unicode(self):
+    def __unicode__(self):
         return self.store_number
