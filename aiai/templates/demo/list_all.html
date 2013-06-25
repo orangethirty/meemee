@@ -6,7 +6,14 @@
 	<h4>New Demo Requests.</h4>
 	<ul>
 		{% for demo in object_list %}
-		<li>{{demo.name}} | {{demo.email}} | {{demo.phone_number}}</li>
+		<li>Name: {{demo.name}} 
+			| Email: {{demo.email}} 
+			| Phone: {{demo.phone_number}} 
+			| Followed up: &nbsp {{demo.followed_up}}
+			| <a href="/demo/request/followed_up">Click if demo has been followed up.</a>
+			
+		</li>
+		<br>
 		{% endfor %}
 	</ul>
 </div>

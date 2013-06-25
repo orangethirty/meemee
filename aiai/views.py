@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect, HttpResponse
-from django.views.generic import CreateView, DetailView, ListView
+from django.views.generic import CreateView, DetailView, ListView, UpdateView
 from django.core.urlresolvers import reverse_lazy
 
 from .models import Item, Store, Demo
@@ -23,6 +23,17 @@ class DemoView(CreateView):
 class DemoListView(ListView):
     model = Demo
     template_name = "demo/list_all.html"
+    
+    def get_queryset(self):
+        return Demo.objects.order_by('-id')
+        
+class DemoUpdateView(UpdateView):
+    #this is not right.
+    #moving on to other important issues.
+    #will come back once i have thought about it more.
+    model = Demo
+    fields = ['followed_up']
+    template_name = 'demo/followed_up.html'
 
 class ItemView(CreateView):
     model = Item

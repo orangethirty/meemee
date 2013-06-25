@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<div class="span11 well">
+
+<h4>Demo request followed up.</h4>
+
+
+
+<form method="POST" action="">
+
+	{% csrf_token %}
+
+	{{form.followed_up}}
+
+<input type="submit" value="Submit">
+
+</form>
+
+</div>
+
+{% endblock main %}
+  
