@@ -6,21 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <!-- Le styles -->
-    <style type="text/css">
-      body {
-        padding-top: 10px;
-        padding-bottom: 40px;
-        background-color: #f5f5f5;
-      }
-
-	  .sale {color: red;}
-	  
-	  .contact {padding-top: 40px;}
-     
-    </style>
-	<!--<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"> -->
+	
+	<style> 
+	
+	body {padding-top: 10px;}
+	
+	</style>
 	
 	<link href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/flatly/bootstrap.min.css" rel="stylesheet">
 
@@ -40,25 +31,14 @@
   <body>
 
     <div class="container">
-
-		<div class="well span12">
+		
+		<div class="well span11">
 			<h1>meemee</h1>
 			<h3>Online lead generation for gongons.</h3>
 		</div>
 		
-		<div class="span12">
-			<h2>Request a FREE demo today. Let us show <em>you</em> how many sales are lost
-				without a properly managed online lead generation solution.<span class="sale">We have personally seen sales increases of up to 32%. In less than one month.</span>
+		{% block main %}{% endblock main %}
 		
-			Our completely managed solutions allow you to focus on what's important: Making the sales.
-			
-		</h2><a href="#" class="btn btn-large btn-primary">Click Here to Request a FREE Demo Now!</a>
-			
-		</div>
-		
-		
-		<div class="span8 contact"><a href="mailto:cheese@cheese.com">Contact Us.</a></div>
-
     </div> <!-- /container -->
 
     <!-- Le javascript
@@ -76,7 +56,7 @@
     <script src="../assets/js/bootstrap-button.js"></script>
     <script src="../assets/js/bootstrap-collapse.js"></script>
     <script src="../assets/js/bootstrap-carousel.js"></script>
-    <script src="../assets/js/bootstrap-typeahead.js"></script>  -->
+    <script src="../assets/js/bootstrap-typeahead.js"></script> -->
 
   </body>
 </html>

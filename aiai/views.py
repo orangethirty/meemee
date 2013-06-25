@@ -22,6 +22,7 @@ class DemoView(CreateView):
 class ItemView(CreateView):
     model = Item
     form_class = ItemForm
+    template_name = "item/item_form.html"
     
     def get_success_url(self):
         #item uri is id #
@@ -38,7 +39,7 @@ class ItemDetailView(DetailView):
 class StoreView(CreateView):
     model = Store
     form_class = StoreForm
-    
+    template_name = "store/store_form.html"
 
 class StoreDetailView(DetailView):
     model = Store
