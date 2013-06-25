@@ -1,10 +1,23 @@
+from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic import CreateView, DetailView
 from django.core.urlresolvers import reverse_lazy
 
-from .models import Item, Store
-from .form import ItemForm, StoreForm
+from .models import Item, Store, Demo
+from .forms import ItemForm, StoreForm, DemoForm
 
+
+def index(request):
+    return render_to_response('index/index.html')
+    
+
+class DemoView(CreateView):
+    model = Demo
+    form_class= DemoForm
+    template_name = "demo/demo_form.html"
+    
+    def form_valid(self, form):
+        pass
 
 class ItemView(CreateView):
     model = Item
@@ -16,7 +29,7 @@ class ItemView(CreateView):
         
     
     def form_valid(self, form):
-        
+        pass
         
 class ItemDetailView(DetailView):
     model = Item        

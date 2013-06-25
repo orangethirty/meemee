@@ -4,7 +4,7 @@ from django.db import models
 class Item(models.Model):
     name = models.CharField(max_length=70) #max length per CL
     description = models.CharField(max_length=100) #max_length per CL
-    store_number = models.CharField(max_legth=6) #enough for 999,999 stores.
+    store_number = models.CharField(max_length=6) #enough for 999,999 stores.
     date_created = models.DateTimeField(auto_now_add = True)
     image_file = models.ImageField(upload_to='items/')
     
@@ -23,3 +23,12 @@ class Store(models.Model):
     
     def __unicode__(self):
         return self.store_number
+        
+
+class Demo(models.Model):
+    name = models.CharField(max_length=255) #name of person requesting demo.
+    email = models.EmailField() #person's email address
+    phone_number = models.CharField(max_length=20) #allows for extension numbers.
+    
+    def __unicode__(self):
+        return self.name
