@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<div class="span10 well">
+	<h4>All items.</h4>
+	<ul>
+		{% for item in object_list %}
+		<li>Name: {{item.name}} 
+			<br>| Description: {{item.description}} 
+			<br>| Store number: {{item.store_number}} 
+			<br>| Date Created: &nbsp {{item.date_created}}
+			<br>| Image: &nbsp {{item.image_file}}
+			
+			
+		</li>
+		<br>
+		{% endfor %}
+	</ul>
+</div>
+
+{% endblock main %}

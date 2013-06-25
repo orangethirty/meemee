@@ -46,7 +46,15 @@ class ItemView(CreateView):
         
     
     def form_valid(self, form):
-        pass
+        form.save()
+        return HttpResponseRedirect('/item/list')
+        
+class ItemListView(ListView):
+    model = Item
+    template_name = "item/list_all.html"
+    
+    def get_queryset(self):
+        return Item.objects.order_by('-id')
         
 class ItemDetailView(DetailView):
     model = Item        

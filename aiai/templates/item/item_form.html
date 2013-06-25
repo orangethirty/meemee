@@ -7,7 +7,7 @@
 	<h4>Upload a new item to be posted.</h4>
 
 <form method="post">
-	
+	{% csrf_token %}
 	{{ form }}
 	
 	<input type="submit" value="Submit">
