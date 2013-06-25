@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect, HttpResponse
-from django.views.generic import CreateView, DetailView
+from django.views.generic import CreateView, DetailView, ListView
 from django.core.urlresolvers import reverse_lazy
 
 from .models import Item, Store, Demo
@@ -19,6 +19,10 @@ class DemoView(CreateView):
     def form_valid(self, form):
         form.save()
         return HttpResponseRedirect('/')
+        
+class DemoListView(ListView):
+    model = Demo
+    template_name = "demo/list_all.html"
 
 class ItemView(CreateView):
     model = Item

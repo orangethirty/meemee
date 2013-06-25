@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<div class="span10 well">
+	<h4>New Demo Requests.</h4>
+	<ul>
+		{% for demo in object_list %}
+		<li>{{demo.name}} | {{demo.email}} | {{demo.phone_number}}</li>
+		{% endfor %}
+	</ul>
+</div>
+
+{% endblock main %}

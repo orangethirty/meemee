@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from aiai.views import DemoView, ItemView, StoreView
+from aiai.views import DemoView, ItemView, StoreView, DemoListView
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -16,7 +16,9 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
      url(r'^admin/', include(admin.site.urls)),
      url(r'^$', 'aiai.views.index'),
-     url(r'^demo/', DemoView.as_view(), name='demo'),
+     url(r'^demo/request/', DemoView.as_view(), name='demo'),
+     url(r'^demo/list/', DemoListView.as_view(), name='demo list'),
      url(r'^item/new/', ItemView.as_view(), name='item new'),
      url(r'^store/new', StoreView.as_view(), name="store new")
+     
 )
