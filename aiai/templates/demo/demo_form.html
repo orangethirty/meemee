@@ -8,9 +8,9 @@
 
 
 
-<form method="POST">
+<form method="POST" action="">
 
-
+	{% csrf_token %}
 {{form}}
 
 <label>We will contact you very quickly.</label>

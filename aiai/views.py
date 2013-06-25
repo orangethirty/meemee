@@ -17,7 +17,8 @@ class DemoView(CreateView):
     template_name = "demo/demo_form.html"
     
     def form_valid(self, form):
-        pass
+        form.save()
+        return HttpResponseRedirect('/')
 
 class ItemView(CreateView):
     model = Item
